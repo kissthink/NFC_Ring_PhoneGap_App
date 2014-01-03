@@ -77,6 +77,6 @@ nfcRing.handleBack = function() {
   }
 
   // When writing an NFC Ring if back button is pressed show the input page IE twitter username prompt
-  if(nfcRing.location == "writing") $('#option').show(); $('#writeRing').hide();
+  if(nfcRing.location == "writing") $('#option').show(); $('#writeRing').hide(); $('#heatMap').hide();
 }
 
