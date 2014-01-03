@@ -96,7 +96,7 @@ nfcRing.submitted = function(key){
     query.find({
       success: function(results){
         for (var i = 0; i < results.length; i++) { 
-          $('.actionName').text("Hold your NFC Ring to the back of your phone at the location indicated by the colored dots.");
+          $('#writeRing > .actionName').text("Hold your NFC Ring to the back of your phone at the location indicated by the colored dots.");
           var object = results[i];
           var x = object.get('x');
           var y = object.get('y');
@@ -104,7 +104,7 @@ nfcRing.submitted = function(key){
           coOrdinateCounter[x+":"+y] = coOrdinateCounter[x+":"+y] || 1;
         }
         if(results.length == 0){ // if there are no results
-          $('.actionName').text("It looks like our awesome community hasn't stored a location of the NFC Sweet Spot for your phone yet, move the ring around the back of the phone until you recieve a message telling you that you found your sweet spot.  This can take a little bit of time so be patient :)");   
+          $('#writeRing > .actionName').text("It looks like our awesome community hasn't stored a location of the NFC Sweet Spot for your phone yet, move the ring around the back of the phone until you recieve a message telling you that you found your sweet spot.  This can take a little bit of time so be patient :)");   
         }else{
           drawHeatMap(coOrdinateCounter);
         }
