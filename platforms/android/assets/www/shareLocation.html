@@ -35,15 +35,15 @@ $("body").click(function(e){
   $('#bubble').css({
     top: centerY+"px",
     left: centerX+"px"
-  });
-  var correctLocation = confirm("Looks good!  Is the red dot close to where the ring works with your phone?");
-  if(correctLocation){
-    var phoneModel = device.model; 
-    // console.log("need to do functionality to get make/model of phone"); // This is available in the device plugin / feature available on Build
-    // for now we fake it..
-    console.log("Sending ", centerX, centerY, phoneModel, " to Database");
-    sendToParse(centerX, centerY, phoneModel);
-  }
+  })
+  setTimeout(function(){
+    var correctLocation = confirm("Looks good!  Is the red dot close to where the ring works with your phone?");
+    if(correctLocation){
+      var phoneModel = device.model; 
+      console.log("Sending ", centerX, centerY, phoneModel, " to Database");
+      sendToParse(centerX, centerY, phoneModel);
+    }
+  }, 100);
 });
 
 function sendToParse(x, y, phoneModel){
