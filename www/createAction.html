@@ -1,46 +1,48 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <meta name = "format-detection" content = "telephone=no"/>
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
-        <link rel="stylesheet" type="text/css" href="css/rung.css" />
-        <title>NFC Ring App</title>
-    </head>
-
-
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name = "format-detection" content = "telephone=no"/>
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+	<link rel="stylesheet" type="text/css" href="css/nfcringapp.css" />
+	<title>NFC Ring App</title>
+</head>
 <body>
 <div id="heatMap"></div>
 
 <div class="container">
+	<div class="mainContents">
 
-<div class="mainContents">
+		<div id="action" class="step action">
+		  <div class="actionName">What do you want your Ring to do?</div>
+		  <div class="actionContents">
+		    <div class="ringActions">
+			    <ul id="ringActions" class="link-list">
+			    </ul>
+		    </div>
+		  </div>
+		</div>
 
-<div id="action" class="step action">
-  <div class="actionName">What do you want your Ring to do?</div>
-  <div class="actionContents">
-    <div class="ringActions">
-    </div>
-  </div>
-</div>
+		<div id="option" class="step option">
+		  <div class="actionName"></div>
+		  <div class="actionContents">
+		    <form id="optionForm">
+		      <label for="optionInput"></label><input name="option" id="optionInput" type="text">
+		      <input type="hidden" id="action" name="action">
+		      <input type="submit" class="btn btn-success next" value="Next" id="submit">
+		    </form>
+		  </div>
+		</div>
 
-<div id="option" class="step option">
-  <div class="actionName"></div>
-  <div class="actionContents">
-    <form id="optionForm">
-      <label for="optionInput"></label><input name="option" id="optionInput" type="text">
-      <input type="hidden" id="action" name="action">
-      <input type="submit" class="btn btn-success next" value="Next" id="submit">
-    </form>
-  </div>
-</div>
-
-<div id="writeRing" class="step writeRing">
-  <div class="actionName"></div>
-  <div class="actionContents">
-    <img src="img/phone-to-ring.png">
-  </div>
-  <button id="finish" type="button" class="btn">Finish</button>
+		<div id="writeRing" class="step writeRing">
+		  <div class="actionName"></div>
+		  <div class="actionContents">
+		    <img src="img/phone-to-ring.png">
+		  </div>
+		  <button id="finish" type="button" class="btn">Finish</button>
+		</div>
+	
+	</div>
 </div>
 
 <script type="text/javascript" src="js/parse-1.2.9.min.js"></script>
@@ -58,10 +60,10 @@ nfcRing.addActions = function() {
     if (!action.image) {
       action.image = key.toLowerCase() + ".png";
     };
-    $(".ringActions").append("<a data-key="+key+" class='ringAction paddedIcon'><img src='img/" + action.image + "'>" + action.label + "</a>");
+    $('#ringActions').append('<li><a data-key="'+key+'" class="icon icon-'+ action.label.toLowerCase() +'">' + action.label + '<span>' + action.description + '</span></a></li>');
   });
   
-  $('.ringAction').click(function(){
+  $('#ringActions a').click(function(){
     nfcRing.location = "option";
     var key = $(this).data("key");
     $('#option').show(); $('#action').hide();

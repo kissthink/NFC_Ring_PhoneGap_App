@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html>
-
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <meta name = "format-detection" content = "telephone=no"/>
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
-        <link rel="stylesheet" type="text/css" href="css/rung.css" />
-        <title>NFC Ring App</title>
-    </head>
-
-
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name = "format-detection" content = "telephone=no"/>
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+	<link rel="stylesheet" type="text/css" href="css/nfcringapp.css" />
+	<title>NFC Ring App</title>
+</head>
 <body>
 
 <div class="container">
-<div class="mainContents">
-<div id="landing" class="landing">
-  <div class="count"></div>
-  <div class="actionName">What do you want to do today?</div>
-  <div class="actionContents">
-    <button type="button" id="createNew" class="btn btn-success">Create new Ring Action</button>
-<!--
-    <button type="button" id="scan" class="btn">Scan QR Code from my computer</button>
--->
-    <button type="button" id="read" class="btn">Read Ring Action</button>
-    <button type="button" id="exit" class="btn">Exit</button>
-  </div>
+	<div class="mainContents">
+
+		<div id="landing" class="landing">
+			<div id="logo"><img src="img/nfcring-logo.png"></div>
+		  <div class="count"></div>
+		  <h2>What do you want to do today?</h2>
+		  <ul class="link-list">
+		    <li><a href="createAction.html" id="createNew" class="icon icon-facebook">Create<span>Write a new action to your ring</span></a></li>
+				<!-- <li><button type="button" id="scan" class="icon icon-facebook">Scan QR Code from my computer</button></li> -->
+		    <li><a href="readAction.html" id="read" class="icon icon-facebook">Read<span>See what's on your ring</span></a></li>
+		    <li><a href="#" id="exit" class="icon icon-facebook">Exit<span>Quit the application</span></a></li>
+		  </ul>
+		</div>
+
+	</div>
 </div>
 
 <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
@@ -35,20 +35,23 @@
 app.initialize();
 
 // listeners
-$("body").on('click', "#createNew", function () {
+/*
+$("body").on('click', "#createNew", function (e) {
   window.location = "createAction.html";
 });
-$("body").on('click', "#scan", function () {
+$("body").on('click', "#scan", function (e) {
   window.location = "scanQR.html";
 });
-$("body").on('click', "#read", function () {
+$("body").on('click', "#read", function (e) {
   window.location = "readAction.html";
 });
-$("body").on('click', "#finish", function () {
+*/
+$("body").on('click', "#finish", function (e) {
   debug("Restarting");
   window.location = "index.html";
 });
-$("body").on('click', "#exit", function () {
+$("body").on('click', "#exit", function (e) {
+	e.preventDefault();
   // close window / running application
   console.log("Exiting app");
   navigator.app.exitApp();

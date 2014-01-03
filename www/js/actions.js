@@ -1,6 +1,7 @@
 var actions = {
   twitter: {
     label: "Twitter",
+    description: "Link to a Twitter user",
     optionText: "What is your Twitter Username?",
     placeHolder: "@nfcring",
     prefix: "http://twitter.com/",
@@ -10,8 +11,9 @@ var actions = {
   },
   facebook: {
     label: "Facebook",
+    description: "Link to a Facebook page",
     optionText: "What is your Facebook Page URL?",
-    placeHolder: "http://facebook.com/ring.cake24",
+    placeHolder: "http://www.facebook.com/NfcRing",
     prefix: "http://facebook.com/",
     format: function (option) {
       return this.prefix + option
@@ -25,9 +27,10 @@ var actions = {
   },
   */
   website: {
-    label: "Website",
+    label: "Link",
+    description: "Link to a URL",
     optionText: "What is the URL of the website?",
-    placeHolder: "http://mclear.co.uk",
+    placeHolder: "http://nfcring.com",
     format: function (option) {
       return option
     }
@@ -42,6 +45,7 @@ var actions = {
   */
   etherpad: {
     label: "Etherpad",
+    description: "Link to an Etherpad",
     optionText: "What is your Pad URL?",
     placeHolder: "http://beta.etherpad.org/p/foowie",
     format: function (option) {
@@ -50,6 +54,7 @@ var actions = {
   },
   youtube: {
     label: "Youtube",
+    description: "Write a video URL",
     optionText: "What is your Youtube Video / Channel?",
     placeHolder: "johnyma22",
     prefix: "http://youtube.com",

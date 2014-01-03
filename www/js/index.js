@@ -51,7 +51,7 @@ nfcRing.write = function(nfcEvent){
   nfc.write([ndefRecord], function () {
     navigator.notification.vibrate(100);
     console.log("Written", ndefRecord);
-    var shareLocation = confirm("Woohoo!  Your ring is ready.  Would you like to be awesome and share the location your ring worked on this phone so others can easily find their sweet spot?");
+    var shareLocation = confirm("Woohoo!  Your ring is ready.  Would you like to be awesome and help others by sharing the sweet spot location for this phone model? ");
     if(shareLocation){
       window.location = "shareLocation.html";
     }
