@@ -12,7 +12,7 @@
 	cursor: pointer;
 	.transition();
 	text-transform: uppercase;
-	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-tap-highlight-color: rgba(255,255,255,0);
 	-webkit-appearance: none;
 
 	&:hover, &:focus {
@@ -28,6 +28,39 @@
 	}	
 }
 
+.btn-link, .btn-link:visited {
+	background: transparent;
+	border:0;
+	color: @dark;
+	display: block;
+	font-size: 2.6em;
+	text-decoration: none;
+	cursor: pointer;
+	.transition();
+	text-align: center;
+	text-transform: uppercase;
+	-webkit-tap-highlight-color: rgba(255,255,255,0);
+	-webkit-appearance: none;
+	position: relative;
+
+	&:before {
+		color: @orange;
+		font-size: 1.2em;
+		width:50px;
+		padding: 25px 0 0 0;
+		position: absolute;
+		top:0px;
+		left:15px;
+	}
+
+	&:hover, &:focus {
+
+	}
+	
+	&:active {
+		background-color: @white;
+	}
+}
 
 
 .btn {

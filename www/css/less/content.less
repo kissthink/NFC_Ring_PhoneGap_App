@@ -6,9 +6,13 @@ body {
 }
 
 .container {
-    max-width: 900px;
-    margin: 0 auto;
-/*     padding: 20px 50px 0 50px; */
+  max-width: 900px;
+  margin: 0 auto;
+/* 	padding: 20px; */
+
+	img {
+		max-width:100%;
+	}
 }
 
 #logo {
@@ -16,17 +20,11 @@ body {
 	
 	img {
 		display: inline-block;
-		max-width:220px;
+		max-width:180px;
 	}
 }
 
-#landing {
-	h2 {
-    margin: 0.83em 0 0.40em 0;
-	}
-}
-
-
+/* Generic list styling */
 .link-list {
 	border-top:1px solid @mgrey;
 	margin:0;
@@ -71,8 +69,67 @@ body {
 	}
 }
 
+/* Index Page */
+#landing {
+	h2 {
+		font-size:2em;
+    margin: 0.4em 0 0.8em 0;
+	}
+}
+
+#writeRing {
+	img {
+		max-width:70%;
+	}
+	
+	.link-list {
+		text-align: center;
+		li {
+			a {
+				padding-left:0;
+				
+				&:before {
+					left: auto;
+					position: relative;
+					vertical-align: middle;
+				}
+			}
+		}
+	}
+}
+
+/* Program ring area */
 .ringActions {
 	
+}
+
+#optionInput {
+  display: block;
+  max-width: 800px;
+  width: 90%;
+  margin: 20px auto;
+  font-size: 2.8em;
+  padding: 15px 2%;
+}
+
+#optionForm {
+	
+	label {
+		font-size:1.2em;
+	}
+	
+	#submit {
+		width:100%;
+		
+		&:after {
+			display: inline-block;
+			color: @orange;
+			font-size: 1.2em;
+			width:50px;
+			padding: 0;
+			vertical-align: middle;
+		}
+	}
 }
 
 
@@ -84,8 +141,6 @@ body {
 .step {
     position: relative;
     width: 100%;
-    padding: 0 0 50px 0;
-    margin-bottom: 50px;
 }
 .count {
     display: none;
@@ -93,27 +148,15 @@ body {
     height: 200px;
     background-color: black;
 }
-.actionName { font-size: 3.2em !important }
-.ringActions { text-align: center }
+
 #scan { height: 40px }
-#optionInput {
-    display: block;
-    max-width: 800px;
-    width: 100%;
-    margin: 20px auto;
-    line-height: 48px;
-    font-size: 3.2em;
-}
+
+
 .obviousButton {
     width: 80%;
     height: 80px;
 }
-#continue,
-.finish {
-    margin-top: 20px;
-    float: right;
-}
-.finish { margin-bottom: 50px }
+
 .platforms {
     padding-top: 20px;
     text-align: center;
@@ -129,13 +172,7 @@ body {
     top: 0;
 }
 .next { float: right }
-footer {
-    background-color: lightgrey;
-    min-height: 200px;
-    color: #fff;
-    padding-top: 50px;
-    text-align: center;
-}
+
 a.paddedIcon > img { padding-bottom: 10px }
 a.paddedIcon {
     display: inline-block;
@@ -145,7 +182,6 @@ a.paddedIcon {
     padding: 2px;
     border: 1px solid #fff;
 }
-a:hover { border: 1px solid #666 }
 .overlay {
     width: 100%;
     height: 100%;
@@ -168,26 +204,8 @@ button.close {
     -webkit-appearance: none;
 }
 
-#optionInput {
-    width: 100%;
-    font-size: 20px;
-}
 a.paddedIcon { padding: 5px }
-.actionName { font-size: 36px }
 
-.btn {
-    font-size: 20px;
-    min-height: 80px;
-}
-input {
-    width: 100% !important;
-    min-height: 80px;
-}
-.step { margin-top: 20px }
-.landing { display: block }
-
-
-.green{ background-color:green ; }
 #option, #writeRing{display:none;}
 
 #heatMap{
