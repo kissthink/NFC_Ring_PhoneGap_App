@@ -13,14 +13,15 @@
 	<div class="mainContents">
 
 		<div id="landing" class="landing">
-			<div id="logo"><img src="img/nfcring-logo.png"></div>
+			<header id="header">
+				<div id="logo"><img src="img/nfcring-logo.png"></div>
+			</header>
 		  <div class="count"></div>
 		  <h2>What do you want to do today?</h2>
 		  <ul class="link-list">
 		    <li><a href="createAction.html" id="createNew" class="icon icon-plus">Create<span>Write a new action to your ring</span></a></li>
 				<!-- <li><button type="button" id="scan" class="icon icon-facebook">Scan QR Code from my computer</button></li> -->
 		    <li><a href="readAction.html" id="read" class="icon icon-eye">Read<span>See what's on your ring</span></a></li>
-		    <li><a href="#" id="exit" class="icon icon-exit">Exit<span>Quit the application</span></a></li>
 		  </ul>
 		</div>
 
@@ -38,12 +39,6 @@ app.initialize();
 $("body").on('click', "#finish", function (e) {
   debug("Restarting");
 });
-$("body").on('click', "#exit", function (e) {
-  e.preventDefault();
-  console.log("Exiting app");
-  navigator.app.exitApp();
-})
-
 </script>
 </body>
 </html>

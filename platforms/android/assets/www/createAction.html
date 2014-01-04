@@ -13,6 +13,10 @@
 <div class="container">
 	<div class="mainContents">
 
+		<header id="header">
+			<div id="logo"><img src="img/nfcring-logo.png"></div>
+		</header>
+		
 		<div id="action" class="step action">
 		  <h2>What do you want your Ring to do?</h2>
 		  <div class="actionContents">
@@ -24,7 +28,7 @@
 		</div>
 
 		<div id="option" class="step option">
-		  <h2 class="actionName"></h2>
+		  <div class="actionName"></div>
 		  <div class="actionContents">
 		    <form id="optionForm">
 		      <label for="optionInput"></label>
@@ -36,11 +40,13 @@
 		</div>
 
 		<div id="writeRing" class="step writeRing">
-		  <h2 class="actionName"></h2>
+		  <div class="actionName"></div>
+<!--
 		  <h2>Hold your NFC Ring to the back of your device</h2>
 		  <div class="actionContents">
 		    <img src="img/nfcring-classic.jpg">
 		  </div>
+-->
 		  <ul class="link-list">
 		  	<li><a href="index.html" id="finish" class="icon icon-exit">Finish</a></li>
 		  </ul>
@@ -102,7 +108,7 @@ nfcRing.submitted = function(key){
     query.find({
       success: function(results){
         for (var i = 0; i < results.length; i++) { 
-          $('#writeRing > .actionName').text("Hold your NFC Ring to the back of your phone at the location indicated by the colored dots.");
+          $('#writeRing > .actionName').html("<h2>Hold your NFC Ring to the back of your phone at the location indicated by the colored dots.</h2>");
           var object = results[i];
           var x = object.get('x');
           var y = object.get('y');
@@ -110,7 +116,7 @@ nfcRing.submitted = function(key){
           coOrdinateCounter[x+":"+y] = coOrdinateCounter[x+":"+y] || 1;
         }
         if(results.length == 0){ // if there are no results
-          $('#writeRing > .actionName').text("It looks like our awesome community hasn't stored a location of the NFC Sweet Spot for your phone yet, move the ring around the back of the phone until you recieve a message telling you that you found your sweet spot.  This can take a little bit of time so be patient :)");   
+          $('#writeRing > .actionName').html("<h2>It looks like our awesome community hasn't stored a location of the NFC Sweet Spot for your phone yet.</h2><p>Move the ring around the back of the phone until you recieve a message telling you that you found your sweet spot.  This can take a little bit of time so be patient :)</p>");   
         }else{
           drawHeatMap(coOrdinateCounter);
         }
