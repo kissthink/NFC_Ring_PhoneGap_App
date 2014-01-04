@@ -13,7 +13,7 @@ var actions = {
     label: "Facebook",
     description: "Link to a Facebook page",
     optionText: "What is your Facebook Page URL?",
-    placeHolder: "http://www.facebook.com/NfcRing",
+    placeHolder: "NfcRing",
     prefix: "http://facebook.com/",
     format: function (option) {
       return this.prefix + option
@@ -57,7 +57,7 @@ var actions = {
     description: "Link to a video or channel",
     optionText: "What is your Youtube Video / Channel?",
     placeHolder: "johnyma22",
-    prefix: "http://youtube.com",
+    prefix: "http://youtube.com/",
     format: function (option) {
       return this.prefix + option
     }
