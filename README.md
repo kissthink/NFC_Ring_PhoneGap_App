@@ -25,3 +25,9 @@ Run with
 ```
 cordova run android
 ```
+
+Note if you install with apt you should do 
+
+```
+export ANT_HOME="/usr/local/ant"
+```
