@@ -681,6 +681,8 @@ Firefox 3.6+, Safari 5,Safari 5.1+, Chrome 10+, Opera 11+, IOS
 */
 /* CSS3 Transitions */
 /* Border radius */
+/* .boxShadow(0,0,4px,0,#444); */
+/* .boxShadow(none); */
 @font-face {
   font-family: 'actionIcons';
   src: url('/img/actionIcons.eot');
@@ -743,6 +745,7 @@ body {
   font-family: helvetica, arial, sans-serif;
   font-size: 62.5%;
   text-align: center;
+  min-height: 100%;
 }
 body.fillit {
   width: 100%;
@@ -804,6 +807,9 @@ body.fillit {
   padding: 2px 0 0 0;
 }
 /* Index Page */
+#landing {
+  padding-top: 0.4em;
+}
 #landing h2 {
   font-size: 2em;
   margin: 0.4em 0 0.8em 0;
@@ -930,6 +936,9 @@ a.paddedIcon {
   display: none;
   height: 30px;
   width: 30px;
-  background-color: red;
+  background-color: #e63712;
   border-radius: 15px;
+  -webkit-box-shadow: 0 0 15px 7px #e63712;
+  -moz-box-shadow: 0 0 15px 7px #e63712;
+  box-shadow: 0 0 15px 7px #e63712;
 }
