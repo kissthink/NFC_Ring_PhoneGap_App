@@ -16,8 +16,10 @@ body {
 	}
 }
 
-#header {
-/* 	background: @dark; */
+.bottom {
+	position:absolute;
+	bottom:0;
+	width:100%;
 }
 
 .container {
@@ -83,6 +85,31 @@ body {
 			}
 		}
 	}
+	
+	&.bottom {
+		
+		li {
+			text-align:center;
+			
+			a {
+				padding-left:20px;
+				
+				&:before {
+					position:relative;
+					top: auto;
+					left: auto;
+					vertical-align: middle;
+				}
+			}
+		}
+	}
+}
+
+actionName {
+	
+	p {
+		padding:0 20px;
+	}
 }
 
 /* Index Page */
@@ -90,11 +117,11 @@ body {
 
 	h2 {
 		font-size:2em;
-    margin: 0.4em 0 0.8em 0;
 	}
 }
 
 #writeRing {
+	
 	img {
 		max-width:70%;
 	}
@@ -156,7 +183,6 @@ body {
 
 
 .step {
-    position: relative;
     width: 100%;
 }
 .count {
@@ -226,6 +252,7 @@ a.paddedIcon { padding: 5px }
 #option, #writeRing{display:none;}
 
 #heatMap{
+	display: none;
   position:fixed;
   height:100%;
   width:100%;
