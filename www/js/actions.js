@@ -28,7 +28,7 @@ var actions = {
   */
   website: {
     label: "Link",
-    description: "Link to a URL",
+    description: "Link to a web address",
     optionText: "What is the URL of the website?",
     placeHolder: "http://nfcring.com",
     format: function (option) {
@@ -54,7 +54,7 @@ var actions = {
   },
   youtube: {
     label: "Youtube",
-    description: "Write a video URL",
+    description: "Link to a video or channel",
     optionText: "What is your Youtube Video / Channel?",
     placeHolder: "johnyma22",
     prefix: "http://youtube.com",
