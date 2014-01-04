@@ -69,7 +69,7 @@ nfcRing.read = function(nfcEvent){
   alert(ringData);
 }
 
-nfcRing.handleBack = function() {
+nfcRing.handleBack = function(){
   // If we're providing an input such as a twitter username and we hit back then go back to the actions prompt page
   if(nfcRing.location == "option"){
     console.log("reloading");
@@ -78,5 +78,8 @@ nfcRing.handleBack = function() {
 
   // When writing an NFC Ring if back button is pressed show the input page IE twitter username prompt
   if(nfcRing.location == "writing") $('#option').show(); $('#writeRing').hide(); $('#heatMap').hide();
+  
+  // When on shareLocation screen if back button is pressed we should go back to the createAction page
+  if(nfcRing.location == "shareLocation") window.location = "createAction.html";
 }
 
