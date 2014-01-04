@@ -47,7 +47,7 @@
 		    <img src="img/nfcring-classic.jpg">
 		  </div>
 -->
-		  <ul class="link-list">
+		  <ul class="link-list bottom">
 		  	<li><a href="index.html" id="finish" class="icon icon-exit">Finish</a></li>
 		  </ul>
 		</div>
@@ -77,7 +77,7 @@ nfcRing.addActions = function() {
     nfcRing.location = "option";
     var key = $(this).data("key");
     $('#option').show(); $('#action').hide();
-    $('#option > .actionName').text(actions[key].label);
+    $('#option > .actionName').html('<h2>' + actions[key].label + '</h2>');
     $('#optionInput').attr("placeholder", actions[key].placeHolder);
     $('form > label').text(actions[key].optionText);
     $('#optionForm').submit(function(e){
@@ -161,6 +161,7 @@ function drawHeatMap(coOrds){
 }
 
 nfcRing.addActions();
+nfcRing.location = "actions";
 
 $("body").on('click', "#finish", function () {
   debug("Restarting");

@@ -81,5 +81,8 @@ nfcRing.handleBack = function(){
   
   // When on shareLocation screen if back button is pressed we should go back to the createAction page
   if(nfcRing.location == "shareLocation") window.location = "createAction.html";
+
+  // When on location page take back to home page
+  if(nfcRing.location == "actions") window.location = "index.html";
 }
 
