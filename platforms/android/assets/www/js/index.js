@@ -51,7 +51,7 @@ nfcRing.write = function(nfcEvent){
   nfc.write([ndefRecord], function () {
     navigator.notification.vibrate(100);
     console.log("Written", ndefRecord);
-    var shareLocation = confirm("Woohoo!  Your ring is ready.  Would you like to be awesome and share the location your ring worked on this phone so others can easily find their sweet spot?");
+    var shareLocation = confirm("Woohoo!  Your ring is ready.  Would you like to be awesome and help others by sharing the sweet spot location for this phone model? ");
     if(shareLocation){
       window.location = "shareLocation.html";
     }
@@ -69,7 +69,7 @@ nfcRing.read = function(nfcEvent){
   alert(ringData);
 }
 
-nfcRing.handleBack = function() {
+nfcRing.handleBack = function(){
   // If we're providing an input such as a twitter username and we hit back then go back to the actions prompt page
   if(nfcRing.location == "option"){
     console.log("reloading");
@@ -78,5 +78,8 @@ nfcRing.handleBack = function() {
 
   // When writing an NFC Ring if back button is pressed show the input page IE twitter username prompt
   if(nfcRing.location == "writing") $('#option').show(); $('#writeRing').hide(); $('#heatMap').hide();
+  
+  // When on shareLocation screen if back button is pressed we should go back to the createAction page
+  if(nfcRing.location == "shareLocation") window.location = "createAction.html";
 }
 
