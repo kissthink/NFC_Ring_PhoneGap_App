@@ -31,3 +31,11 @@ Note if you install with apt you should do
 ```
 export ANT_HOME="/usr/local/ant"
 ```
+
+# Publishing
+```
+cordova build android --release
+cd platforms/android/bin
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore KEYSTOREFILELOCATION NFCRingPro-release-unsigned.apk nfcring
+zipalign -v 4 NFCRingPro-release-unsigned.apk NFCRingControl.apk
+```
